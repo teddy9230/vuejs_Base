@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p v-if="name">Vue JS</p>
+        <p v-if="age">24</p>
+
+        <button @click="ShowName"> 姓名顯示 | 姓名隱藏 </button>
+        <button @click="ShowAge"> 年齡顯示 | 年齡隱藏</button>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                name: true,
+                age: true,
+            },
+            methods: {
+                ShowName() {
+                    this.name = !this.name
+                },
+                ShowAge() {
+                    this.age = !this.age
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
